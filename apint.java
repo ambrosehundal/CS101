@@ -4,7 +4,8 @@ import java.util.*;
 public class apint{
 
     //array to store numbers or vector, check if you can use Vectors
-    public char ap_array[] = new char[100000000];
+    public char ap_array[] = null;
+
 
     //default constructor
     public apint(){
@@ -14,10 +15,10 @@ public class apint{
 
     //constructor using strings
     public apint(String s){
-        
+        ap_array = new char[s.length()];  //initializing array
         for(int i = 0; i < s.length(); i++){
             ap_array[i] = s.charAt(i);
-            char c = s.charAt(i);
+          //  char c = s.charAt(i);
           //  System.out.println(c);
         }
        
@@ -35,10 +36,13 @@ public class apint{
 
     //method to print
     public void print(){
+
         for(int i = 0; i < ap_array.length; i++){
             System.out.print(ap_array[i]);
 
         }
+        System.out.println("\n");
+      
     }
 
 
@@ -63,6 +67,7 @@ public class apint{
 
         
         d.print();
+        //c.print();
 
        
 
