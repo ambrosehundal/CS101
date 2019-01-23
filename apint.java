@@ -59,7 +59,7 @@ public class apint{
 
         //testing for constructor using strings
         String number = "-11030";
-        String n1 = "+33335";
+        String n1 = "+3333532974923479234792374294729";
 
         apint d = new apint(n1);
 
