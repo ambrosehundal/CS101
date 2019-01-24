@@ -18,8 +18,7 @@ public class apint{
         ap_array = new char[s.length()];  //initializing array
         for(int i = 0; i < s.length(); i++){
             ap_array[i] = s.charAt(i);
-          //  char c = s.charAt(i);
-          //  System.out.println(c);
+          
         }
        
 
@@ -28,9 +27,27 @@ public class apint{
     //constructor for conversion of ints
     public apint(int convert){
 
+        String num = Integer.toString(convert);
+        ap_array = new char[num.length()];
+
+        for(int i = 0; i < num.length(); i++){
+            ap_array[i] = num.charAt(i);
+        }
+
     }
 
     //constructor for conversion of reals that truncates the fractional part
+    public apint(double d){
+        int value = (int)d;
+
+        String num = Integer.toString(value);
+        ap_array = new char[num.length()];
+
+        for(int i = 0; i < num.length(); i++){
+            ap_array[i] = num.charAt(i);
+        }
+        
+    }
 
 
 
@@ -65,9 +82,44 @@ public class apint{
 
         apint c = new apint(number);
 
+
+        //testing for conversion of ints
+        int s1 = 899868686;
+        int s2 = 69;
+
+        apint e = new apint(s1);
+
+        e.print();
+
+        apint f = new apint(s2);
+
+        f.print();
+
+
+        //testing for conversion of reals that truncates fractional part
+
+        double d1 = 64.34343;
+
+        double d2 = 233454.3455;
         
+        apint g = new apint(d1);
+
+        apint h = new apint(d2);
+
+        g.print();
+
+        h.print();
+
+
+
+        
+        //testing for print method
         d.print();
-        //c.print();
+        c.print();
+
+
+
+        //testing for adding two apints
 
        
 
