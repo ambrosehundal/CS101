@@ -63,7 +63,80 @@ public class apint{
     }
 
 
-    //methods for addition, subtraction, multiplication and division
+    //methods for addition
+    public apint addAPint(apint a , apint b){
+        int carry = 0;
+        int val = 0;
+        
+        boolean neg = false;
+
+        int len1 = a.ap_array.length;
+        int len2 = b.ap_array.length;
+        int len = Math.max(len1, len2);
+
+        int i = len1 - 1;
+        int j = len2 - 1;
+        int k = 0;
+
+        //new apint where the sum will be stored
+        apint c = new apint();
+        c.ap_array = new char[len];
+       
+
+        //while loop
+        while( i >= 0 || j >= 0){
+                val = 0;
+            
+            if(i < len1){
+                val+= a.ap_array[i];
+                i++;
+            }
+
+            if(j < len2){
+                val+= b.ap_array[i];
+                j++;
+            }
+
+            val+= carry;
+
+
+
+        }
+        
+
+
+
+        
+
+
+
+
+
+        return c;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    //subtraction
+    
+    
+    
+    
+    
+    
+    
+    //multiplication 
+    
+    
+    
+    
+    
+    //division
 
 
     //main
@@ -120,6 +193,12 @@ public class apint{
 
 
         //testing for adding two apints
+
+        // +233 + -34
+
+        // -285 + +2333
+
+        // 64 + 85
 
        
 
