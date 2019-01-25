@@ -75,8 +75,8 @@ public class apint{
         int len2 = b.ap_array.length;
         int len = Math.max(len1, len2);
         
-        System.out.println(len1);
-        System.out.println(len2);
+       // System.out.println(len1);
+       // System.out.println(len2);
 
 
         int i = len1 - 1;
@@ -85,7 +85,7 @@ public class apint{
 
         //new apint where the sum will be stored
         apint c = new apint();
-        c.ap_array = new char[len]; //double check this
+        c.ap_array = new char[len + 1]; //double check this
        
 
         //while loop
@@ -109,14 +109,13 @@ public class apint{
 
             entry = val%10;
 
-          //  System.out.println(entry);
+          // System.out.println(entry);
 
-            char num = (char)entry;
+            char num = (char) (entry + '0');
 
-            System.out.println(num);            
+           // System.out.println(num);            
 
             c.ap_array[k] = num;   
-            System.out.println("K = " + k + " val = "  + c.ap_array[k]);
             k--;
 
         }
@@ -126,7 +125,7 @@ public class apint{
 
         
 
-      //  c.print();
+       c.print();
 
 
 
@@ -218,16 +217,21 @@ public class apint{
 
         // 64 + 85
 
-        int a1 = 874;
-        int a2 = 69;
+        int a1 = 554;
+        int a2 = 190;
+        int a3 = 345;
 
         apint m = new apint(a1);
 
         apint n = new apint(a2);
 
+        apint p = new apint(a3);
+
         
 
         addAPint(m, n);
+
+        addAPint(m, p);
 
        // mn = 
 
