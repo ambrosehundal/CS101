@@ -68,6 +68,8 @@ public class apint{
         int carry = 0;
         int val = 0;
         int entry = 0;
+        int borrow = 0;
+        int number = 0;
         
        // boolean neg = false;
 
@@ -85,22 +87,62 @@ public class apint{
 
         //new apint where the sum will be stored
         apint c = new apint();
-        c.ap_array = new char[len + 1]; //double check this
+        c.ap_array = new char[len]; //double check this
        
 
         //while loop
-        while( i >= 0 || j >= 0){
+        while(i >= 0 || j >= 0){
                 val = 0;
             
-            if(i >=0) {
-                
-                val+= Character.getNumericValue(a.ap_array[i]);
+           
+
+            if(i >= 0) {
+                if(a.ap_array[0] == '-'){
+
+
+                    if(a.ap_array[i] < b.ap_array[j]){
+                       // if (borrow == 1){
+                      //      a.ap_array[i]--;
+                      //  }
+                        borrow = 1;
+                        a.ap_array[i]+= 10;
+                        val-= a.ap_array[i];
+                        System.out.println(val);
+                    }
+                    else if(a.ap_array[i] >= b.ap_array[j]){
+                        val -= a.ap_array[i];
+                        System.out.println(val);
+                    }
+
+                }
+                else{
+                    if(a.ap_array[i] == '+'){
+                        val+=0;
+    
+                    }
+                    else{
+                        val+= Character.getNumericValue(a.ap_array[i]);
+                        
+                    }
+
+                }
+               
                 i--;
+                
+                
             }
 
             if(j >=0){
-                val+= Character.getNumericValue(b.ap_array[j]);
+
+                if(b.ap_array[j] == '+'){
+                    val+=0;
+                }
+                else{
+                    val+= Character.getNumericValue(b.ap_array[j]);
+                    
+                }
                 j--;
+                
             }
 
             val+= carry;
@@ -220,6 +262,8 @@ public class apint{
         int a1 = 554;
         int a2 = 190;
         int a3 = 345;
+        String str = "-124";
+        String s5 = "89";
 
         apint m = new apint(a1);
 
@@ -227,11 +271,20 @@ public class apint{
 
         apint p = new apint(a3);
 
+        apint r = new apint(str);
+
+        apint s = new apint(s5);
+
+
         
 
-        addAPint(m, n);
+        
 
-        addAPint(m, p);
+       // addAPint(m, n);
+
+       // addAPint(m, r);
+
+        addAPint(r, s);
 
        // mn = 
 
